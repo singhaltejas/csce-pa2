@@ -4,15 +4,42 @@
 
 <h1>Movies</h1>
 
+<style>
+  .highlight {
+    background-color: #dff0d8; 
+    font-weight: bold;
+  }
+
+  .sort-arrow {
+    font-weight: bold;
+    margin-left: 5px;
+  }
+</style>
+
 <div id="movies">
   <table>
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Rating</th>
-        <th>Release Date</th>
+        <th class="<%= 'highlight' if session[:sort] == 'title' %>">
+          <%= link_to "Movie Title #{session[:sort] == 'title' ? (session[:direction] == 'asc' ? '↑' : '↓') : ''}", 
+                      movies_path(sort: "title", direction: session[:direction] == "asc" ? "desc" : "asc"),
+                      class: 'sort-arrow' %>
+        </th>
+
+        <th class="<%= 'highlight' if session[:sort] == 'rating' %>">
+          <%= link_to "Movie Rating #{session[:sort] == 'rating' ? (session[:direction] == 'asc' ? '↑' : '↓') : ''}", 
+                      movies_path(sort: "rating", direction: session[:direction] == "asc" ? "desc" : "asc"),
+                      class: 'sort-arrow' %>
+        </th>
+
+        <th class="<%= 'highlight' if session[:sort] == 'release_date' %>">
+          <%= link_to "Release Date #{session[:sort] == 'release_date' ? (session[:direction] == 'asc' ? '↑' : '↓') : ''}", 
+                      movies_path(sort: "release_date", direction: session[:direction] == "asc" ? "desc" : "asc"),
+                      class: 'sort-arrow' %>
+        </th>
       </tr>
     </thead>
+
     <tbody>
       <% @movies.each do |movie| %>
         <tr>
