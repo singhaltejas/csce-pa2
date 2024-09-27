@@ -2,9 +2,36 @@
 
 <%= render @movie %>
 
-<div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+<div class="button-group">
+  <%= link_to "Edit this movie", edit_movie_path(@movie), class: "link-button edit-button" %> 
+  <%= link_to "Back to movies", movies_path, class: "link-button" %>
+  <%= button_to "Destroy this movie", @movie, method: :delete, class: "destroy-button" %>
 </div>
+
+<style>
+.button-group {
+  display: flex; 
+  justify-content: center; 
+  margin-top: 20px; 
+}
+
+.link-button {
+  text-decoration: none; 
+  background-color: gray; 
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  display: inline-block; 
+  margin: 0 5px; 
+}
+
+.edit-button {
+  background-color: green; 
+}
+
+.destroy-button {
+  background-color: red; 
+  color: white; 
+  padding: 10px 15px; 
+  border-radius: 5px; 
+}
+</style>

@@ -1,22 +1,55 @@
-<div id="<%= dom_id movie %>">
+<div id="<%= dom_id movie %>" class="movie-details">
+  <h2>Movie Details</h2>
+
   <p>
     <strong>Title:</strong>
-    <%= movie.title %>
+    <span class="movie-info"><%= movie.title %></span>
   </p>
 
   <p>
     <strong>Rating:</strong>
-    <%= movie.rating %>
+    <span class="movie-info"><%= movie.rating %></span>
   </p>
 
   <p>
     <strong>Description:</strong>
-    <%= movie.description %>
+    <span class="movie-info"><%= movie.description %></span>
   </p>
 
   <p>
-    <strong>Release date:</strong>
-    <%= movie.release_date %>
+    <strong>Release Date:</strong>
+    <span class="movie-info"><%= movie.release_date.strftime("%B %d, %Y") %></span>
   </p>
-
 </div>
+
+<style>
+.movie-details {
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  padding: 20px; 
+  margin: 20px auto; 
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  max-width: 600px; 
+  text-align: center; 
+  font-family: 'Arial', sans-serif;
+}
+
+.movie-details h2 {
+  margin-bottom: 15px; 
+  color: #333; 
+  font-size: 24px;
+}
+
+.movie-info {
+  font-weight: normal; 
+  color: #555; 
+  font-size: 18px; 
+  display: block;
+  margin: 5px 0; 
+}
+
+strong {
+  color: #007BFF; 
+}
+</style>

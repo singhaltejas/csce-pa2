@@ -6,7 +6,35 @@
 
 <br>
 
-<div>
-  <%= link_to "Show this movie", @movie %> |
-  <%= link_to "Back to movies", movies_path %>
+<div class="centered-links">
+  <span>
+    <%= link_to "Show this movie", @movie, class: "link-button" %>
+  </span>
+  <span>
+    <%= link_to "Back to movies", movies_path, class: "link-button" %>
+  </span>
 </div>
+
+<style>
+.centered-links {
+  text-align: center; 
+  margin-top: 20px;  
+}
+
+.link-button {
+  margin: 0 10px; 
+  text-decoration: none; 
+  color: #fff; 
+  padding: 10px 15px;
+  border-radius: 5px; 
+  display: inline-block; 
+  background-color: #007bff; 
+  border: 1px solid transparent; 
+  transition: background-color 0.3s, border-color 0.3s; 
+}
+
+.link-button:hover {
+  background-color: #0056b3; 
+  border-color: #0056b3; 
+}
+</style>
