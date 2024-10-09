@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* Deployed app available at : https://rottenpotatoestejascsce606-21d7f2e552f6.herokuapp.com/
